@@ -8,7 +8,7 @@ describe('Filter: renderCard', function () {
   // initialize a new instance of the filter before each test
   var render;
   beforeEach(inject(function ($filter) {
-    render = $filter('render');
+    render = $filter('renderCard');
   }));
 
   describe('render', function() {

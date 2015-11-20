@@ -47,25 +47,6 @@ describe('Service: BoardService', function () {
 
         });
 
-        it('has pairs', function(){
-
-          Boardservice.deal();
-          var cells = Boardservice.sortedCellsByCardId();
-
-          expect(cells.length).toBe(12);
-          expect(cells[0].card.id).toBe(1);
-
-          var nbPairs = 0;
-          for (var i=0; i<cells.length; i+=2) {
-            if (cells[i].card.id === cells[i+1].card.id) {
-              nbPairs++;
-            }
-          }
-
-          expect(nbPairs).toBe(6);
-
-        });
-
     });
 
 
