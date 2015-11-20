@@ -1,0 +1,53 @@
+.card {
+    margin: 3px;
+    padding: 3px;
+    border-style: solid;
+    border-width: 1px;
+}
+.card-purple {
+    border-color: #9881F5;
+    color: #9881F5;
+    ;border-color: #7A0D7A;
+    ;color: #7A0D7A;
+}
+.card-green {
+    border-color: #9DBC06;
+    color: #9DBC06;
+}
+.card-pink {
+    border-color: #F22F69;
+    color: #F22F69;
+}
+.card-orange {
+    border-color: #F5930E;
+    color: #F5930E;
+}
+.card-blue {
+    border-color: #2F5168;
+    color: #2F5168;
+}
+.card-cyan {
+    border-color: #4DB3B3;
+    color: #4DB3B3;
+}
+.card-red {
+    border-color: #E64A45;
+    color: #E64A45;
+}
+.card-placed {
+    padding: 4px;
+}
+.card-removed  {
+    color: transparent !important;
+    border-color: transparent !important;
+}
+.card-selected  {
+    border-width: 2px;
+}
+.wingame {
+    font-size: 2em;
+    font-family: Verdana, Arial, sans;
+    font-style: italic;
+    color: #E64A45;
+}
+
