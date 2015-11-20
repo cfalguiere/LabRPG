@@ -20,7 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Dev http-server Grunt
   config.vm.network "forwarded_port", guest: 8000, host: 8000
   # live reload Gulp
-  #config.vm.network "forwarded_port", guest: 35729, host:35729
+  config.vm.network "forwarded_port", guest: 35729, host:35729
   # Karma http-server
   config.vm.network "forwarded_port", guest: 9876, host: 9876
   # http-server running in docker container
