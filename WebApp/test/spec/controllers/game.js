@@ -99,7 +99,7 @@ describe('Controller: GameCtrl', function () {
     });
 
   });
-/*
+
   describe('When user clicks a card', function () {
 
     it('has a selectedCell', function () {
@@ -109,8 +109,7 @@ describe('Controller: GameCtrl', function () {
     });
 
   });
-  */
-/*
+
   describe('When user removed all cards', function () {
 
     it('game is completed', function () {
@@ -129,5 +128,5 @@ describe('Controller: GameCtrl', function () {
       expect(scope.completed).toBe(true);
     });
   });
-  */
+
 });
