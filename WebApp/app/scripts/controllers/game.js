@@ -14,14 +14,9 @@ angular.module('labrpgApp')
     $scope.board = Gameservice.getBoard();
 
     $scope.completed = false;
-    $scope.selectedCell = null;
 
     $scope.playCell = function (cell) {
-      /*
-        cell.state = 'removed';
-      */
       Gameservice.playCell(cell);
       $scope.completed = Gameservice.isCompleted();
-      $scope.selectedCell = Gameservice.getSelectedCell();
     };
   });

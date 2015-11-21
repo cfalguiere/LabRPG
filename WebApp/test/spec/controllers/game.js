@@ -48,13 +48,11 @@ describe('Controller: GameCtrl', function () {
         }
       };
 
-      var selectedCell = null;
       var count = 0;
       var gameDependency =  {
-        reset : function() { count = 0; selectedCell = null; },
+        reset : function() { count = 0; },
         getBoard : function() { return board; },
-        playCell : function(cell) { count++; selectedCell = cell; },
-        getSelectedCell : function() { return selectedCell; },
+        playCell : function(cell) { count++; cell.state='completed' },
         isCompleted : function() { return count === board.length*board[0].length; }
       };
 
@@ -90,10 +88,6 @@ describe('Controller: GameCtrl', function () {
       expect(board[0][0].state).toBe('placed');
     });
 
-    it('does not have a selectedCell', function () {
-      expect(scope.selectedCell).toBeNull();
-    });
-
     it('game is not completed', function () {
       expect(scope.completed).toBe(false);
     });
@@ -102,10 +96,12 @@ describe('Controller: GameCtrl', function () {
 
   describe('When user clicks a card', function () {
 
-    it('has a selectedCell', function () {
-      expect(scope.selectedCell).toBeNull();
-      scope.playCell(scope.board[0][0]);
-      expect(scope.selectedCell).not.toBeNull();
+    it('turns to completed', function () {
+      Gameservice.reset();
+      var activeCell = Boardservice.getCellAt(0,0);
+      expect(activeCell.state).toBe('placed');
+      scope.playCell(activeCell);
+      expect(activeCell.state).toBe('completed');
     });
 
   });
