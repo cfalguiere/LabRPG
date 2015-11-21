@@ -48,10 +48,10 @@ describe('Service: GameService', function () {
 
   describe('On reset', function () {
 
-    it('has no selectedCell', function () {
+    it('has no completed cell', function () {
       Gameservice.reset();
       var cell1 = Boardservice.getCellAt(0,0);
-      Gameservice.playCell(cell1);
+      expect(cell1.state).toBe('placed');
       Gameservice.reset();
     });
 

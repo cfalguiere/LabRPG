@@ -18,7 +18,10 @@ describe('Filter: renderCard', function () {
     });
 
     it('should return a list of CSS classes', function() {
-          var cell1 = { id: 1, card: { id: 1, color: 'red', shape: 'heart'}, state: 'placed' };
+          var cell1 = { id: 1,
+                       card: { id: 1, color: 'red', shape: 'heart',
+                              lab: { id: 'l1', name: 'light 1', description: 'LIGHT 1'}},
+                       state: 'placed' };
           expect(render(cell1)).toBe('glyphicon glyphicon-heart card card-placed card-red');
     });
 
