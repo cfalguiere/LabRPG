@@ -74,7 +74,6 @@ describe('Service: BoardService', function () {
 
           var board = Boardservice.deal();
           var cell = Boardservice.getCellAt(2, 1);
-
           expect(cell.id).toBe(board[2][1].id) ;
 
        });

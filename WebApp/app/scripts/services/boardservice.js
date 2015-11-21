@@ -20,14 +20,6 @@ angular.module('labrpgApp')
     var nbLines = 3;
     var nbCols = 4;
 
-    //@ http://jsfromhell.com/array/shuffle [v1.0]
-   /*
-    function shuffle (o) {
-        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x) {
-        }
-        return o;
-    } */
-
     function dealCells (cards) {
       var cells = [];
       var nbCells = nbLines * nbCols;
@@ -60,9 +52,6 @@ angular.module('labrpgApp')
     // public interface
 
     this.deal = function() {
-      //var cards = shuffle(CardFactory);
-      //var shuffledCells = shuffle(dealCells(cards));
-      //return makeBoard(shuffledCells);
       return makeBoard(dealCells(CardFactory));
     };
 
