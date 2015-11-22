@@ -3,7 +3,7 @@
 
 
     <div ng-show="completed">
-        <p class="wingame">You win !</p>
+        <p class="wingame">Bravo !</p>
     </div>
 
 
@@ -17,6 +17,7 @@
                      <span class="glyphicon glyphicon-{{ cell.card.shape }} card card-{{ cell.state }} card-{{ cell.card.color }}"></span>
                       -->
                      <span class="{{ cell | renderCard }}"></span>
+                     <span class="{{ cell | renderCompleted }}"></span>
                 </div>
             </td>
         </tr>

@@ -9,12 +9,12 @@ describe('Service: GameService', function () {
     beforeEach( function () {
       var board = [
         [
-          { id: 1, card: { id: 1, shape: 'heart', color: 'red' }, state: 'placed'},
-          { id: 2, card: { id: 1, shape: 'heart', color: 'red' }, state: 'placed'}
+          { id: 1, card: { id: 1, shape: 'heart', color: 'red', completed: false }, state: 'placed'},
+          { id: 2, card: { id: 1, shape: 'heart', color: 'red', completed: false }, state: 'placed'}
         ],
         [
-          { id: 3, card: { id: 2, shape: 'heart', color: 'blue' }, state: 'placed'},
-          { id: 4, card: { id: 2, shape: 'heart', color: 'blue' }, state: 'placed'}
+          { id: 3, card: { id: 2, shape: 'heart', color: 'blue', completed: false  }, state: 'placed'},
+          { id: 4, card: { id: 2, shape: 'heart', color: 'blue', completed: false  }, state: 'placed'}
         ]
       ];
 
@@ -55,6 +55,12 @@ describe('Service: GameService', function () {
       Gameservice.reset();
     });
 
+    it('has no selected cell', function () {
+      Gameservice.reset();
+      expect(Gameservice.getSelectedCell()).toBeNull();
+      Gameservice.reset();
+    });
+
     it('is not completed', function () {
       Gameservice.reset();
       expect(Gameservice.isCompleted()).toBe(false);
@@ -64,29 +70,18 @@ describe('Service: GameService', function () {
 
   describe('When user clicks a cell', function () {
 
-    it('if cell is placed it becomes completed', function () {
+    it('becomes selected', function () {
       Gameservice.reset();
 
       var cell1 = Boardservice.getCellAt(0,0);
       expect(cell1.state).toBe('placed');
+      expect(Gameservice.getSelectedCell()).toBeNull();
 
       Gameservice.playCell(cell1);
-      expect(cell1.state).toBe('completed');
+      expect(cell1.state).toBe('selected');
+      expect(Gameservice.getSelectedCell()).toBe(cell1);
     });
 
-    it('if cell is completed and selected again it becomes placed', function () {
-      Gameservice.reset();
-
-      var cell1 = Boardservice.getCellAt(0,0);
-      expect(cell1.state).toBe('placed');
-
-      Gameservice.playCell(cell1);
-      expect(cell1.state).toBe('completed');
-
-      Gameservice.playCell(cell1);
-      expect(cell1.state).toBe('placed');
-
-    });
   });
 
 
@@ -101,10 +96,10 @@ describe('Service: GameService', function () {
 
       var cells = Boardservice.sortedCellsByCardId();
 
-      cells[0].state = 'completed';
-      cells[1].state = 'completed';
-      cells[2].state = 'completed';
-      cells[3].state = 'completed';
+      cells[0].card.completed = true;
+      cells[1].card.completed = true;
+      cells[2].card.completed = true;
+      cells[3].card.completed = true;
 
       expect(Gameservice.isCompleted()).toBe(true);
     });

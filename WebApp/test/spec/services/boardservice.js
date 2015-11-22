@@ -15,7 +15,7 @@ describe('Service: BoardService', function () {
                     { id: 4, shape: 'star', color: 'blue'},
                     { id: 5, shape: 'music', color: 'red'},
                     { id: 6, shape: 'music', color: 'blue'}
-                 ];
+        ];
 
       module(function ($provide) {
         $provide.value('CardFactory', cardsDependency);
@@ -35,14 +35,6 @@ describe('Service: BoardService', function () {
           expect(board).toBeDefined();
         });
 
-        it('has 3 rows and 4 columns', function(){
-          var board = Boardservice.deal();
-          expect(board.length).toBe(3);
-          expect(board[0].length).toBe(4);
-          expect(board[0][0].id).toBeDefined();
-          expect(board[0][0].card.id).toBeDefined();
-        });
-
     });
 
 
@@ -53,10 +45,9 @@ describe('Service: BoardService', function () {
           var cells = Boardservice.sortedCellsByCardId();
 
           //expect(cells).toBeNull() ;
-          expect(cells.length).toBe(12) ;
+          expect(cells.length).toBe(4) ;
           expect(cells[0].card.id).toBe(1) ;
-          expect(cells[0].card.id).toBe(cells[1].card.id) ;
-          expect(cells[2].card.id).toBe(2) ;
+          expect(cells[1].card.id).toBe(2) ;
         });
 
     });
@@ -66,8 +57,8 @@ describe('Service: BoardService', function () {
 
        it('returns the cell', function(){
           var board = Boardservice.deal();
-          var cell = Boardservice.getCellAt(2, 1);
-          expect(cell.id).toBe(board[2][1].id) ;
+          var cell = Boardservice.getCellAt(0, 2);
+          expect(cell.id).toBe(board[0][2].id) ;
        });
 
     });

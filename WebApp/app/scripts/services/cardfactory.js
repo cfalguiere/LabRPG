@@ -17,6 +17,7 @@ angular.module('labrpgApp')
        this.shape = aShape;
        this.color = aColor;
        this.lab = aLab;
+       this.completed = false;
     }
 
     var colors = [ 'cyan', 'green', 'blue', 'orange', 'purple', 'pink', ];
