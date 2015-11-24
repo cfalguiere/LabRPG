@@ -39,6 +39,11 @@ angular
         controller: 'GameCtrl',
         controllerAs: 'game'
       })
+      .when('/labinfo', {
+        templateUrl: 'views/labinfo.html',
+        controller: 'LabinfoCtrl',
+        controllerAs: 'labinfo'
+      })
       .otherwise({
         redirectTo: '/'
       });

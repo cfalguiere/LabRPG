@@ -1,0 +1,9 @@
+<div class="container" ng-show="activeCell">
+  <h2>{{ activeCell.card.lab.name }}</h2>
+    <p>Objectif:</p>
+    <p>{{ activeCell.card.lab.description }}</p>
+    <p>
+    <span class="{{ activeCell | renderCard }}"></span>
+    <span class="{{ activeCell | renderCompleted }}"></span>
+    </p>
+</div>

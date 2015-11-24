@@ -8,7 +8,7 @@
  * Controller of the labrpgApp
  */
 angular.module('labrpgApp')
-  .controller('GameCtrl', function ($scope, Gameservice) {
+  .controller('GameCtrl', function ($scope, $location, Gameservice) {
 
     Gameservice.reset();
     $scope.board = Gameservice.getBoard();
@@ -18,5 +18,6 @@ angular.module('labrpgApp')
     $scope.playCell = function (cell) {
       Gameservice.playCell(cell);
       $scope.completed = Gameservice.isCompleted();
+      $location.path('labinfo');
     };
   });

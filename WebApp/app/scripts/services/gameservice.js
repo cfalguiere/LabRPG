@@ -37,7 +37,7 @@ angular.module('labrpgApp')
         selectedCell = cell;
         cell.state = 'selected';
         cell.card.completed = true; //TODO temporaire
-    };
+     };
 
     this.isCompleted = function () {
       var completed = board.reduce( function(acc, row) {
