@@ -12,7 +12,10 @@ angular.module('labrpgApp')
   .filter('renderCompleted', function () {
     return function (cell) {
       var state = 'unchecked';
-      if (cell.card.completed) state = 'check';
+      if (cell.card.completed)
+      {
+        state = 'check';
+      }
       return 'glyphicon glyphicon-' + state + ' card-green';
     };
   });
