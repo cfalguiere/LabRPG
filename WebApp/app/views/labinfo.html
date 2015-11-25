@@ -1,9 +1,16 @@
 <div class="container" ng-show="activeCell">
-  <h2>{{ activeCell.card.lab.name }}</h2>
+    <center>
+        <img src="{{ activeCell.card.lab.getCoverImage() }}" />
+    </center>
+    <h2>{{ activeCell.card.lab.name }}</h2>
     <p>Objectif:</p>
     <p>{{ activeCell.card.lab.description }}</p>
     <p>
-    <span class="{{ activeCell | renderCard }}"></span>
-    <span class="{{ activeCell | renderCompleted }}"></span>
+        <span class="{{ activeCell | renderCard }}"></span>
+        <span class="{{ activeCell | renderCompleted }}"></span>
     </p>
+    <p>Démo:</p>
+    <center>
+        <img height=300 src="{{ activeCell.card.lab.getDemoImage() }}" />
+    </center>
 </div>

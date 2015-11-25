@@ -32,4 +32,22 @@ describe('Service: LabFactory', function () {
 
     });
 
+    describe('Lab methods', function(){
+
+       it('returns a folder path', function(){
+           var lab = LabFactory[0];
+           expect( lab.getFolder() ).toBe('images/labs/light-1');
+       });
+
+       it('returns a cover image name', function(){
+           var lab = LabFactory[0];
+           expect( lab.getCoverImage() ).toBe('images/labs/light-1/cover.png');
+       });
+
+       it('returns a demo image name', function(){
+           var lab = LabFactory[0];
+           expect( lab.getDemoImage() ).toBe('images/labs/light-1/demo.jpg');
+       });
+   });
+
 });

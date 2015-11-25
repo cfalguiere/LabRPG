@@ -11,6 +11,9 @@
         <tr ng-repeat="row in board">
             <td ng-repeat="cell in row" ng-click="playCell(cell)" >
                 <div class="cover">
+                    <center>
+                        <img src="{{ cell.card.lab.getCoverImage() }}" />
+                    </center>
                     <p>{{ cell.card.lab.name }}</p>
                     <p>{{ cell.card.lab.description }}</p>
                      <!--

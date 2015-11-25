@@ -14,6 +14,15 @@ angular.module('labrpgApp')
        this.id = anId;
        this.name = aName;
        this.description = aDescription;
+       this.getFolder = function () {
+        return 'images/labs/' + this.id;
+       }
+       this.getCoverImage = function () {
+        return this.getFolder() + '/cover.png';
+       }
+       this.getDemoImage = function () {
+        return this.getFolder() + '/demo.jpg';
+       }
     }
 
     var labs = [];
