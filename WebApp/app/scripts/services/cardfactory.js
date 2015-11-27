@@ -18,6 +18,8 @@ angular.module('labrpgApp')
        this.color = aColor;
        this.lab = aLab;
        this.completed = false;
+       this.reachable = false;
+       this.visible = false;
     }
 
     var colors = [ 'cyan', 'green', 'blue', 'orange', 'purple', 'pink', ];
@@ -27,6 +29,9 @@ angular.module('labrpgApp')
     var cards = LabFactory.map(function(lab){
       return new Card(i++, 'heart', 'cyan', lab);
     });
+
+    cards[0].visible = true;
+    cards[1].visible = true;
 
     return cards;
   });
