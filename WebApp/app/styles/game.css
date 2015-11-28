@@ -27,10 +27,13 @@
     text-align: center;
 }
 
-.presentation  >  .summary {
+.presentation  >  .banner {
     height:120px
 }
-.presentation  >  .title {
+.presentation  >  .section {
+    margin-top: 0.5em;
+}
+.presentation  >  .section > .title {
     padding-top: 0.5em;
     font-size: 1.2em;
     font-weight: bold;

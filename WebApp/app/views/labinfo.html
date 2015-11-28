@@ -1,6 +1,6 @@
 <div class="container" ng-show="activeCell">
     <div class="presentation">
-        <div class="summary">
+        <div class="banner">
             <img style="float:right" src="{{ activeCell.card.lab.getCoverImage() }}" />
             <h2>{{ activeCell.card.lab.name }}</h2>
             <p>
@@ -8,13 +8,21 @@
                 <span class="{{ activeCell | renderCompleted }}"></span>
             </p>
         </div>
-        <p class="title">Objectif:</p>
-        <p>{{ activeCell.card.lab.description }}</p>
-        <p class="title">Démo:</p>
-        <center>
-            <img height=300 src="{{ activeCell.card.lab.getDemoImage() }}" />
-        </center>
-
-        <iframe width="100%" name="lab" ng-src="markdown/sample.html"></iframe>
-    </div>
+        <div style="float:right;" class="section">
+            <p class="title">Démo :</p>
+            <center>
+                <img width=300 src="{{ activeCell.card.lab.getDemoImage() }}" />
+            </center>
+            <p> </p>
+        </div>
+        <div class="section">
+            <p class="title">Objectif :</p>
+            <p>{{ activeCell.card.lab.description }}</p>
+        </div>
+        <!--
+        <div class="section">
+          <iframe width="100%" name="lab" ng-src="markdown/sample.html"></iframe>
+        </div>
+        -->
+     </div>
 </div>
