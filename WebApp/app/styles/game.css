@@ -3,7 +3,30 @@
     padding: 3px;
     border-style: solid;
     border-width: 1px;
+    border-color: #aaaaaa;
+    height: 250px
 }
+
+.cover > .banner {
+    height: 100px;
+    text-align: center;
+}
+.cover > .info {
+    height: 110px;
+}
+.cover > .icons {
+    height: 32px;
+    width: 200px;
+    background-color: #eeeeee;
+}
+
+.cover > .info > .title {
+    padding-top: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
 .presentation {
 }
 .card {
@@ -42,7 +65,7 @@
     border-color: #E64A45;
     color: #E64A45;
 }
-.cardp-placed {
+.card-placed {
     padding: 4px;
 }
 .card-unreachable  {
@@ -52,6 +75,9 @@
 }
 .card-completed {
     border-width: 2px;
+}
+.cover > .icons > .card-completed {
+    float: right;
 }
 .wingame {
     font-size: 2em;

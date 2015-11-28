@@ -12,17 +12,21 @@
             <td ng-repeat="cell in row" ng-click="playCell(cell)" >
                 <div ng-show="{{ cell.card.visible }}">
                     <div class="cover">
-                        <center>
-                            <img src="{{ cell.card.lab.getCoverImage() }}" />
-                        </center>
-                        <p>{{ cell.card.lab.name }}</p>
-                        <p>{{ cell.card.lab.description }}</p>
-                         <!--
-                         <span class="glyphicon glyphicon-{{ cell.card.shape }} card card-{{ cell.state }} card-{{ cell.card.color }}"></span>
-                          -->
-                         <span class="{{ cell | renderCard }}"></span>
-                         <span class="{{ cell | renderCompleted }}"></span>
-                    </div>
+                        <div class="banner">
+                             <img src="{{ cell.card.lab.getCoverImage() }}" />
+                        </div>
+                        <div class="info">
+                            <p class="title">{{ cell.card.lab.name }}</p>
+                            <p>{{ cell.card.lab.description }}</p>
+                             <!--
+                             <span class="glyphicon glyphicon-{{ cell.card.shape }} card card-{{ cell.state }} card-{{ cell.card.color }}"></span>
+                             -->
+                        </div>
+                         <div class="icons">
+                             <span class="{{ cell | renderCard }}"></span>
+                             <span class="{{ cell | renderCompleted }}"></span>
+                         </div>
+                   </div>
                 </div>
             </td>
         </tr>
