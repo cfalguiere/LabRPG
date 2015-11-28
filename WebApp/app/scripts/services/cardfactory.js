@@ -27,7 +27,7 @@ angular.module('labrpgApp')
 
     var i = 1;
     var cards = LabFactory.map(function(lab){
-      return new Card(i++, 'heart', 'cyan', lab);
+      return new Card(i++, lab.theme, 'cyan', lab);
     });
 
     cards[0].visible = true;
