@@ -1,18 +1,20 @@
 <div class="container" ng-show="activeCell">
-    <center>
-        <img src="{{ activeCell.card.lab.getCoverImage() }}" />
-    </center>
-    <h2>{{ activeCell.card.lab.name }}</h2>
-    <p>Objectif:</p>
-    <p>{{ activeCell.card.lab.description }}</p>
-    <p>
-        <span class="{{ activeCell | renderCard }}"></span>
-        <span class="{{ activeCell | renderCompleted }}"></span>
-    </p>
-    <p>Démo:</p>
-    <center>
-        <img height=300 src="{{ activeCell.card.lab.getDemoImage() }}" />
-    </center>
+    <div class="presentation">
+        <div class="summary">
+            <img style="float:right" src="{{ activeCell.card.lab.getCoverImage() }}" />
+            <h2>{{ activeCell.card.lab.name }}</h2>
+            <p>
+                <span class="{{ activeCell | renderCard }}"></span>
+                <span class="{{ activeCell | renderCompleted }}"></span>
+            </p>
+        </div>
+        <p class="title">Objectif:</p>
+        <p>{{ activeCell.card.lab.description }}</p>
+        <p class="title">Démo:</p>
+        <center>
+            <img height=300 src="{{ activeCell.card.lab.getDemoImage() }}" />
+        </center>
 
-    <iframe width="100%" name="lab" ng-src="markdown/sample.html"></iframe>
+        <iframe width="100%" name="lab" ng-src="markdown/sample.html"></iframe>
+    </div>
 </div>

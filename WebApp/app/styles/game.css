@@ -27,8 +27,15 @@
     text-align: center;
 }
 
-.presentation {
+.presentation  >  .summary {
+    height:120px
 }
+.presentation  >  .title {
+    padding-top: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .card {
     margin: 3px;
     padding: 3px;
