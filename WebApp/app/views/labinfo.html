@@ -8,7 +8,7 @@
                 <span class="{{ activeCell | renderCompleted }}"></span>
             </p>
         </div>
-        <div style="float:right;" class="section">
+        <div style="float:right;" class="section" ng-show="{{ activeCell.card.lab.getDemoImage() }}">
             <p class="title">Démo :</p>
             <center>
                 <img width=300 src="{{ activeCell.card.lab.getDemoImage() }}" />
