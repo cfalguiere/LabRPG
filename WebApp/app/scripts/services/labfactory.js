@@ -67,6 +67,9 @@ angular.module('labrpgApp')
     labs.push( new Lab('l12-base2', 'Univac', 'Aux origines',
        'Les premiers ordinateurs n’avaient pas d’écran. Ils affichaient les résultats des calculs en allumant des lampes.',
                        light) );
+    labs.push( new Lab('l13-gui-folle', 'GuirlandeFolle', 'La guirlande folle',
+       'On va se servir de l’affichage de nombre en binaire pour allumer les LEDs de la guirlande et faire des motifs.',
+                       light) );
 //C’est pour ça que les vieux films de Science-Fiction ont des ordinateurs très bizarres',
 
 

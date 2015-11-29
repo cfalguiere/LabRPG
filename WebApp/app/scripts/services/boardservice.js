@@ -17,7 +17,7 @@ angular.module('labrpgApp')
     }
 
     var board;
-    var nbLines = 3;
+    var nbLines = 4;
     var nbCols = 4; //TODO changer la répartition
 
     function dealCells (cards) {
