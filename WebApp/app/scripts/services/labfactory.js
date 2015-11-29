@@ -29,7 +29,10 @@ angular.module('labrpgApp')
            return null;
          }
        }
-    }
+       this.getGuide = function () {
+         return this.getFolder() + '/guide.pdf';
+       }
+   }
 
     var light = 'lamp';
     var music = 'music';
