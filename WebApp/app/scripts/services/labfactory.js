@@ -31,7 +31,7 @@ angular.module('labrpgApp')
          }
        }
        this.getGuide = function () {
-         return this.getFolder() + '/guide.pdf';
+         return this.getFolder() + '/Guide.pdf';
        }
        this.getCircuit = function () {
          return this.getFolder() + '/SchemaCircuit.png';
@@ -67,10 +67,13 @@ angular.module('labrpgApp')
     labs.push( new Lab('l12-base2', 'Univac', 'Aux origines',
        'Les premiers ordinateurs n’avaient pas d’écran. Ils affichaient les résultats des calculs en allumant des lampes.',
                        light) );
+//C’est pour ça que les vieux films de Science-Fiction ont des ordinateurs très bizarres',
     labs.push( new Lab('l13-gui-folle', 'GuirlandeFolle', 'La guirlande folle',
        'On va se servir de l’affichage de nombre en binaire pour allumer les LEDs de la guirlande et faire des motifs.',
                        light) );
-//C’est pour ça que les vieux films de Science-Fiction ont des ordinateurs très bizarres',
+    labs.push( new Lab('l14-enseigne', 'EnseigneLumineuse', 'Enseigne lumineuse',
+       'On va reprendre la guirlande folle pour allumer les LEDs dans un certain ordre et faire une enseigne.',
+                       light) );
 
 
     labs.push( new Lab('m1-sirene', 'JouerUneNote', 'La sirène de pompier',
