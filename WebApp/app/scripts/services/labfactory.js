@@ -58,6 +58,9 @@ angular.module('labrpgApp')
     labs.push( new Lab('l4-feu-tri', 'FeuTricolore', 'Le feu de circulation',
        'Faire un feu de circulation avec les 3 couleurs du feu voiture et les 2 couleurs du feu piéton',
                        light) );
+    labs.push( new Lab('l5-morse', 'EmetteurMorse', 'Emettre du Morse',
+       'Apprendre à utiliser les boutons poussoirs en faisant un émetteur Morse lumineux',
+                       light) );
     labs.push( new Lab('m1-sirene', 'JouerUneNote', 'La sirène de pompier',
        'Apprendre à utiliser le buzzer pour jouer un son', music) );
     labs.push( new Lab('m2-morceau', 'JouerUnMorceau', 'Jouer un morceau',
