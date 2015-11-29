@@ -84,10 +84,15 @@
     filter:alpha(opacity=50);
 }
 .card-completed {
-    border-width: 2px;
+    font-size: 1.7em;
+    border-width: 1.2px;
 }
 .cover > .icons > .card-completed {
+    padding-top: 4px;
     float: right;
+}
+.presentation > .banner > .card-completed {
+    padding-left: 4px;
 }
 .wingame {
     font-size: 2em;

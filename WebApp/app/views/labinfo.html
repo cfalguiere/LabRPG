@@ -5,10 +5,12 @@
             <h2>{{ activeCell.card.lab.name }}</h2>
             <p>
                 <span class="{{ activeCell | renderCard }}"></span>
-                <span class="{{ activeCell | renderCompleted }}"></span>
+            </p>
+            <p>
+                <span class="{{ activeCell | renderCompleted }}" ng-click="completeCell(activeCell)"></span>
             </p>
         </div>
-        <div style="float:right;" class="section" ng-show="{{ activeCell.card.lab.getDemoImage() }}">
+        <div style="float:right;" class="section" ng-show="{{ activeCell.card.lab.getDemoImage() != null }}">
             <p class="title">Démo :</p>
             <center>
                 <img width=300 src="{{ activeCell.card.lab.getDemoImage() }}" />
@@ -18,6 +20,10 @@
         <div class="section">
             <p class="title">Objectif :</p>
             <p>{{ activeCell.card.lab.description }}</p>
+        </div>
+        <div class="section">
+            <p class="title">Instructions :</p>
+            <p><a href="{{ activeCell.card.lab.getGuide() }}" target="{{ activeCell.card.lab.id }}" >Ouvrir les instructions</a></p>
         </div>
         <div class="section" style="clear: both;margin-top:3em;">
              <a href="#/game"><span class="glyphicon glyphicon-triangle-left"> Choisir un autre montage</a>

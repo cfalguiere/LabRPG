@@ -16,6 +16,6 @@ angular.module('labrpgApp')
       {
         state = 'check';
       }
-      return 'glyphicon glyphicon-' + state + ' card-green';
+      return 'glyphicon glyphicon-' + state + ' card-green card-completed' ;
     };
   });

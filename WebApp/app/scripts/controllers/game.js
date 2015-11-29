@@ -17,7 +17,6 @@ angular.module('labrpgApp')
 
     $scope.playCell = function (cell) {
       Gameservice.playCell(cell);
-      $scope.completed = Gameservice.isCompleted();
       $location.path('labinfo');
     };
   });
