@@ -64,6 +64,10 @@ angular.module('labrpgApp')
     labs.push( new Lab('l11-gui-noel', 'GuirlandeDeNoel', 'Guirlande de Noël',
        'Apprendre à utiliser les boucles en faisant une guirlande de Noël',
                        light) );
+    labs.push( new Lab('l12-base2', 'Univac', 'Aux origines',
+       'Les premiers ordinateurs n’avaient pas d’écran. Ils affichaient les résultats des calculs en allumant des lampes.',
+                       light) );
+//C’est pour ça que les vieux films de Science-Fiction ont des ordinateurs très bizarres',
 
 
     labs.push( new Lab('m1-sirene', 'JouerUneNote', 'La sirène de pompier',
