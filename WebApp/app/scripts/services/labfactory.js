@@ -33,6 +33,9 @@ angular.module('labrpgApp')
        this.getGuide = function () {
          return this.getFolder() + '/guide.pdf';
        }
+       this.getCircuit = function () {
+         return this.getFolder() + '/SchemaCircuit.png';
+       }
        this.getCode = function () {
          if (this.ref != null) {
            return this.getFolder() + '/' + this.ref + '.zip';

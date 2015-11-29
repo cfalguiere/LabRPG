@@ -29,6 +29,10 @@
             <p class="title">Programme :</p>
             <p><a href="{{ activeCell.card.lab.getCode() }}" download="{{ activeCell.card.lab.ref }}.zip" >Télécharger le code</a></p>
         </div>
+        <div class="section">
+            <p class="title">Montage :</p>
+            <p><img src="{{ activeCell.card.lab.getCircuit() }}" width=300></p>
+        </div>
         <div class="section" style="clear: both;margin-top:3em;">
              <a href="#/game"><span class="glyphicon glyphicon-triangle-left"> Choisir un autre montage</a>
         </div>
