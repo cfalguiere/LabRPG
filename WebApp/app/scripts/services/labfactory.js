@@ -15,6 +15,7 @@ angular.module('labrpgApp')
        this.name = aName;
        this.description = aDescription;
        this.theme = aTheme;
+       this.demoImage = null;
        this.getFolder = function () {
         return 'images/labs/' + this.id;
        }
@@ -22,7 +23,11 @@ angular.module('labrpgApp')
         return this.getFolder() + '/cover.png';
        }
        this.getDemoImage = function () {
-        return this.getFolder() + '/demo.jpg';
+         if (this.demoImage != null) {
+           return this.getFolder() + '/' + this.demoImage;
+         } else {
+           return null;
+         }
        }
     }
 
@@ -32,8 +37,10 @@ angular.module('labrpgApp')
     var labs = [];
     labs.push( new Lab('l1', 'Lumière !',
        'Allumer une LED et comprendre comment marche le circuit', light) );
-    labs.push( new Lab('l2', 'Le feu clignotant',
-       'Faire clignoter la LED', light) );
+    var lab2 = new Lab('l2', 'Le feu clignotant',
+       'Faire clignoter la LED', light);
+    lab2.demoImage = "demo.jpg";
+    labs.push( lab2 );
     labs.push( new Lab('l3', 'Le feu piéton',
        'Contrôler deux LEDs verte et rouge', light) );
     labs.push( new Lab('m1', 'La sirène de pompier',

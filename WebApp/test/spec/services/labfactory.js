@@ -27,7 +27,7 @@ describe('Service: LabFactory', function () {
 
         it('first card id is 1', function(){
           var lab = LabFactory[0];
-          expect( lab.id ).toBe( 'light-1' );
+          expect( lab.id ).toBe( 'l1' );
         });
 
     });
@@ -36,17 +36,22 @@ describe('Service: LabFactory', function () {
 
        it('returns a folder path', function(){
            var lab = LabFactory[0];
-           expect( lab.getFolder() ).toBe('images/labs/light-1');
+           expect( lab.getFolder() ).toBe('images/labs/l1');
        });
 
        it('returns a cover image name', function(){
            var lab = LabFactory[0];
-           expect( lab.getCoverImage() ).toBe('images/labs/light-1/cover.png');
+           expect( lab.getCoverImage() ).toBe('images/labs/l1/cover.png');
        });
 
        it('returns a demo image name', function(){
+           var lab = LabFactory[1];
+           expect( lab.getDemoImage() ).toBe('images/labs/l2/demo.jpg');
+       });
+
+       it('returns null if no image prvided', function(){
            var lab = LabFactory[0];
-           expect( lab.getDemoImage() ).toBe('images/labs/light-1/demo.jpg');
+           expect( lab.getDemoImage() ).toBeNull();
        });
    });
 
