@@ -10,8 +10,9 @@
 angular.module('labrpgApp')
   .factory('LabFactory', function () {
 
-    function Lab(anId, aName, aDescription, aTheme) {
+    function Lab(anId, aRef, aName, aDescription, aTheme) {
        this.id = anId;
+       this.ref = aRef;
        this.name = aName;
        this.description = aDescription;
        this.theme = aTheme;
@@ -32,23 +33,30 @@ angular.module('labrpgApp')
        this.getGuide = function () {
          return this.getFolder() + '/guide.pdf';
        }
+       this.getCode = function () {
+         if (this.ref != null) {
+           return this.getFolder() + '/' + this.ref + '.zip';
+         } else {
+           return null;
+         }
+      }
    }
 
     var light = 'lamp';
     var music = 'music';
 
     var labs = [];
-    labs.push( new Lab('l1', 'Lumière !',
+    labs.push( new Lab('l1', null, 'Lumière !',
        'Allumer une LED et comprendre comment marche le circuit', light) );
-    var lab2 = new Lab('l2', 'Le feu clignotant',
+    var lab2 = new Lab('l2', 'FeuClignotant', 'Le feu clignotant',
        'Faire clignoter la LED', light);
     lab2.demoImage = "demo.jpg";
     labs.push( lab2 );
-    labs.push( new Lab('l3', 'Le feu piéton',
+    labs.push( new Lab('l3', null, 'Le feu piéton',
        'Contrôler deux LEDs verte et rouge', light) );
-    labs.push( new Lab('m1', 'La sirène de pompier',
+    labs.push( new Lab('m1', null, 'La sirène de pompier',
        'Apprendre à utiliser le buzzer pour jouer un son', music) );
-    labs.push( new Lab('m2', 'Jouer un morceau',
+    labs.push( new Lab('m2', null, 'Jouer un morceau',
        'Jouer un morceau et apprendre à utiliser les tableaux', music) );
 
     // Public API here
