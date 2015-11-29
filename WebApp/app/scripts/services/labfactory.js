@@ -49,17 +49,18 @@ angular.module('labrpgApp')
     var music = 'music';
 
     var labs = [];
-    labs.push( new Lab('l1', null, 'Lumière !',
+    labs.push( new Lab('l1-lumiere', null, 'Lumière !',
        'Allumer une LED et comprendre comment marche le circuit', light) );
-    var lab2 = new Lab('l2', 'FeuClignotant', 'Le feu clignotant',
-       'Faire clignoter la LED', light);
-    lab2.demoImage = "demo.jpg";
-    labs.push( lab2 );
-    labs.push( new Lab('l3', null, 'Le feu piéton',
+    labs.push( new Lab('l2-feu-cli', 'FeuClignotant', 'Le feu clignotant',
+       'Faire clignoter la LED', light) );
+    labs.push( new Lab('l3-feu-pie', 'FeuPieton', 'Le feu piéton',
        'Contrôler deux LEDs verte et rouge', light) );
-    labs.push( new Lab('m1', null, 'La sirène de pompier',
+    labs.push( new Lab('l4-feu-tri', 'FeuTricolore', 'Le feu de circulation',
+       'Faire un feu de circulation avec les 3 couleurs du feu voiture et les 2 couleurs du feu piéton',
+                       light) );
+    labs.push( new Lab('m1-sirene', 'JouerUneNote', 'La sirène de pompier',
        'Apprendre à utiliser le buzzer pour jouer un son', music) );
-    labs.push( new Lab('m2', null, 'Jouer un morceau',
+    labs.push( new Lab('m2-morceau', 'JouerUnMorceau', 'Jouer un morceau',
        'Jouer un morceau et apprendre à utiliser les tableaux', music) );
 
     // Public API here
