@@ -68,6 +68,10 @@ angular.module('labrpgApp')
     labs.push( new Lab('m3-morse-s', 'EmetteurMorseSonore', 'Emetteur Morse Sonore',
        'Apprendre à utiliser les boutons poussoirs en faisant un émetteur Morse sonore',
                        music) );
+    labs.push( new Lab('m4-theremine', 'Theremine', 'Le Thérémine',
+       'Un instrument de musique électronique où le son est contrôlé par la position des mains.' ,
+                       music) );
+   //On va construire un thérémine en utilisant le capteur de luminosité. Notre main va masquer la lumière',
     labs.push( new Lab('p1-sos-morse', 'SOSMorse', 'SOS Morse',
        'Tu es perdu et ton objectif est de construire un appareil qui émet le signal de détresse S.O.S. toutes les 20 secondes.',
                        light) );

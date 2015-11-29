@@ -39,6 +39,7 @@ angular.module('labrpgApp')
     cards[6].visible = true;
     cards[7].visible = true;
     cards[8].visible = true;
+    cards[9].visible = true;
 
     return cards;
   });
