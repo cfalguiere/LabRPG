@@ -65,6 +65,9 @@ angular.module('labrpgApp')
        'Apprendre à utiliser le buzzer pour jouer un son', music) );
     labs.push( new Lab('m2-morceau', 'JouerUnMorceau', 'Jouer un morceau',
        'Jouer un morceau et apprendre à utiliser les tableaux', music) );
+    labs.push( new Lab('m3-morse-s', 'EmetteurMorseSonore', 'Emetteur Morse Sonore',
+       'Apprendre à utiliser les boutons poussoirs en faisant un émetteur Morse sonore',
+                       music) );
 
     // Public API here
     /*
