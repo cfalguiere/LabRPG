@@ -61,6 +61,11 @@ angular.module('labrpgApp')
     labs.push( new Lab('l5-morse', 'EmetteurMorse', 'Emettre du Morse',
        'Apprendre à utiliser les boutons poussoirs en faisant un émetteur Morse lumineux',
                        light) );
+    labs.push( new Lab('l11-gui-noel', 'GuirlandeDeNoel', 'Guirlande de Noël',
+       'Apprendre à utiliser les boucles en faisant une guirlande de Noël',
+                       light) );
+
+
     labs.push( new Lab('m1-sirene', 'JouerUneNote', 'La sirène de pompier',
        'Apprendre à utiliser le buzzer pour jouer un son', music) );
     labs.push( new Lab('m2-morceau', 'JouerUnMorceau', 'Jouer un morceau',
@@ -75,6 +80,7 @@ angular.module('labrpgApp')
     labs.push( new Lab('p1-sos-morse', 'SOSMorse', 'SOS Morse',
        'Tu es perdu et ton objectif est de construire un appareil qui émet le signal de détresse S.O.S. toutes les 20 secondes.',
                        light) );
+
 
     // Public API here
     /*
