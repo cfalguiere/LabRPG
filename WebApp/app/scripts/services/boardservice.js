@@ -17,35 +17,23 @@ angular.module('labrpgApp')
     }
 
     var board;
-    var nbLines = 4;
-    var nbCols = 4; //TODO changer la répartition
 
     function dealCells (cards) {
-      var cells = [];
-      var nbCells = nbLines * nbCols;
-      var nbCards = cards.length;
-      var cardIndex = 0;
-      for (var cellId = 1; cellId <= nbCells; cardIndex++) {
-        if (cardIndex >= nbCards) {
-          cardIndex = 0;
-        }
-        cells.push( new Cell(cellId++, cards[cardIndex]) );
-      }
+      var i = 1;
+      var cells = cards.map(function(card){
+        return new Cell(i++, card);
+      });
       return cells;
     }
 
     function makeBoard (cells) {
-      board = [];
-      var i = 0;
-      for (var l = 0; l < nbLines; l++) {
-        var row = [];
-        for (var c = 0; c < nbCols; c++) {
-          row.push( cells[i++] );
-        }
-        board.push(row);
-      }
-
-      return board;
+      /*
+        board = [];
+        for (var cell in cells) {
+           board.push(cell);
+        }*/
+        board = cells;
+        return board;
     }
 
     // public interface
@@ -54,18 +42,11 @@ angular.module('labrpgApp')
       return makeBoard(dealCells(CardFactory));
     };
 
-    this.sortedCellsByCardId = function() {
-      var cells = board.reduce(function(acc, row){
-         return acc.concat(row);
-      });
-      function compareByCardId (a, b) {
-        return a.card.id - b.card.id;
-      }
-
-      return cells.sort(compareByCardId);
+    this.getCells = function() {
+      return board;
     };
 
-    this.getCellAt = function(row, column) {
-      return board[row][column];
+    this.getCellAt = function(pos) {
+      return board[pos];
     };
   });

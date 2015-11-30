@@ -17,6 +17,7 @@ angular.module('labrpgApp')
 
     $scope.playCell = function (cell) {
       Gameservice.playCell(cell);
+      $scope.activeCell = Gameservice.getSelectedCell();
       $location.path('labinfo');
     };
   });

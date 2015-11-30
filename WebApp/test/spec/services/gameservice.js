@@ -7,26 +7,27 @@ describe('Service: GameService', function () {
 
     // defines a 4x4 board
     beforeEach( function () {
-      var board = [
-        [
-          { id: 1, card: { id: 1, shape: 'heart', color: 'red', completed: false }, state: 'placed'},
-          { id: 2, card: { id: 1, shape: 'heart', color: 'red', completed: false }, state: 'placed'}
-        ],
-        [
-          { id: 3, card: { id: 2, shape: 'heart', color: 'blue', completed: false  }, state: 'placed'},
-          { id: 4, card: { id: 2, shape: 'heart', color: 'blue', completed: false  }, state: 'placed'}
-        ]
+      var board =  [
+        { id: 1, state: 'placed',
+         card: { id: 1, shape: 'light', color: 'red', completed: false, reachable: false, visible: false,
+         lab: { id: 'l1', ref: 'L1', name: 'light 1', description: 'LIGHT 1', theme: 'light' } } },
+        { id: 2, state: 'placed',
+         card: { id: 2, shape: 'light', color: 'red', completed: false, reachable: false, visible: false,
+         lab: { id: 'l2', ref: 'L2', name: 'light 2', description: 'LIGHT 2', theme: 'light' } } },
+        { id: 3, state: 'placed',
+          card: { id: 3, shape: 'music', color: 'red', completed: false, reachable: false, visible: false,
+          lab: { id: 'm1', ref: 'M1', name: 'music 1', description: 'MUSIC 1', theme: 'music' } } },
+        { id: 4, state: 'placed',
+          card: { id: 4, shape: 'music', color: 'red', completed: false, reachable: false, visible: false,
+          lab: { id: 'm2', ref: 'M2', name: 'music 2', description: 'MUSIC 2', theme: 'music' } } }
       ];
 
       var boardDependency =  {
-        sortedCellsByCardId : function() {
-          var cells = board.reduce(function(acc, row){
-            return acc.concat(row);
-          });
-          return cells;
+        getCells: function () {
+          return board;
         },
-        getCellAt: function (row, column) {
-          return board[row][column];
+        getCellAt: function (pos) {
+          return board[pos];
         },
         deal: function () {
           return board;
@@ -50,7 +51,7 @@ describe('Service: GameService', function () {
 
     it('has no completed cell', function () {
       Gameservice.reset();
-      var cell1 = Boardservice.getCellAt(0,0);
+      var cell1 = Gameservice.getBoard()[0];
       expect(cell1.state).toBe('placed');
       Gameservice.reset();
     });
@@ -73,7 +74,7 @@ describe('Service: GameService', function () {
     it('becomes selected', function () {
       Gameservice.reset();
 
-      var cell1 = Boardservice.getCellAt(0,0);
+      var cell1 = Gameservice.getBoard()[0];
       expect(cell1.state).toBe('placed');
       expect(Gameservice.getSelectedCell()).toBeNull();
 
@@ -94,7 +95,7 @@ describe('Service: GameService', function () {
 
       expect(Gameservice.isCompleted()).toBe(false);
 
-      var cells = Boardservice.sortedCellsByCardId();
+      var cells = Gameservice.getBoard();
 
       cells[0].card.completed = true;
       cells[1].card.completed = true;

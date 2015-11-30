@@ -39,15 +39,12 @@ angular.module('labrpgApp')
     };
 
     this.completeCell = function (cell) {
-         cell.card.completed = true; //TODO temporaire
+         cell.card.completed = true;
     };
 
     this.isCompleted = function () {
-      var completed = board.reduce( function(acc, row) {
-        var lineCompleted = row.reduce( function(acc, cell) {
-          return acc && cell.card.completed;
-        }, true);
-        return acc && lineCompleted;
+      var completed = board.reduce( function(acc, cell) {
+           return acc && cell.card.completed;
       }, true);
       return completed;
     };

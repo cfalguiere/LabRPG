@@ -8,10 +8,10 @@ describe('Service: CardFactory', function () {
      // defines a 4x4 board
     beforeEach( function () {
       var labs = [
-          { id: 'l1', name: 'light 1', description: 'LIGHT 1' },
-          { id: 'l2', name: 'light 2', description: 'LIGHT 2' },
-          { id: 'm1', name: 'music 1', description: 'MUSIC 1' },
-          { id: 'm2', name: 'music 2', description: 'MUSIC 2' },
+          { id: 'l1', ref: 'L1', name: 'light 1', description: 'LIGHT 1', theme: 'light' },
+          { id: 'l2', ref: 'L2', name: 'light 2', description: 'LIGHT 2', theme: 'light' },
+          { id: 'm1', ref: 'M1', name: 'music 1', description: 'MUSIC 1', theme: 'music' },
+          { id: 'm2', ref: 'M2', name: 'music 2', description: 'MUSIC 2', theme: 'music' }
       ];
       var labDependency = labs;
       module(function ($provide) {
@@ -50,7 +50,7 @@ describe('Service: CardFactory', function () {
         it('first card id is 1', function(){
           var card = CardFactory[0];
           expect( card.id ).toBe( 1 );
-          expect( card.shape ).toBe( 'heart' );
+          expect( card.shape ).toBe( 'light' );
           expect( card.color ).toBe( 'cyan' );
         });
 

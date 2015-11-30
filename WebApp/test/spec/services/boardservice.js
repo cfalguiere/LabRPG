@@ -9,13 +9,15 @@ describe('Service: BoardService', function () {
     // mock CardFactory
     beforeEach(function () {
       var cardsDependency =   [
-                    { id: 1, shape: 'heart', color: 'red'},
-                    { id: 2, shape: 'heart', color: 'blue'},
-                    { id: 3, shape: 'star', color: 'red'},
-                    { id: 4, shape: 'star', color: 'blue'},
-                    { id: 5, shape: 'music', color: 'red'},
-                    { id: 6, shape: 'music', color: 'blue'}
-        ];
+        { id: 1, shape: 'light', color: 'red', completed: false, reachable: false, visible: false,
+         lab: { id: 'l1', ref: 'L1', name: 'light 1', description: 'LIGHT 1', theme: 'light' } },
+        { id: 2, shape: 'light', color: 'red', completed: false, reachable: false, visible: false,
+         lab: { id: 'l2', ref: 'L2', name: 'light 2', description: 'LIGHT 2', theme: 'light' } },
+        { id: 3, shape: 'music', color: 'red', completed: false, reachable: false, visible: false,
+          lab: { id: 'm1', ref: 'M1', name: 'music 1', description: 'MUSIC 1', theme: 'music' } },
+        { id: 4, shape: 'music', color: 'red', completed: false, reachable: false, visible: false,
+          lab: { id: 'm2', ref: 'M2', name: 'music 2', description: 'MUSIC 2', theme: 'music' } }
+      ];
 
       module(function ($provide) {
         $provide.value('CardFactory', cardsDependency);
@@ -23,9 +25,10 @@ describe('Service: BoardService', function () {
     });
 
     // instantiate service
-    var Boardservice;
-    beforeEach(inject(function (_Boardservice_) {
+    var Boardservice, CardFactory;
+    beforeEach(inject(function (_Boardservice_, _CardFactory_) {
       Boardservice = _Boardservice_;
+      CardFactory = _CardFactory_;
     }));
 
     describe('On deal', function(){
@@ -33,33 +36,12 @@ describe('Service: BoardService', function () {
         it('set the board', function(){
           var board = Boardservice.deal();
           expect(board).toBeDefined();
-        });
+          expect(board.length).toBe(4);
+          expect(board[0].id).toBe(1) ;
+          expect(board[0].card.id).toBe(1) ;
+          expect(board[0].card.lab.id).toBe('l1') ;
+      });
 
     });
 
-
-    describe('On sortedCells', function(){
-
-       it('board is flatten and sorted', function(){
-          Boardservice.deal();
-          var cells = Boardservice.sortedCellsByCardId();
-
-          //expect(cells).toBeNull() ;
-          expect(cells.length).toBe(4) ;
-          expect(cells[0].card.id).toBe(1) ;
-          expect(cells[1].card.id).toBe(2) ;
-        });
-
-    });
-
-
-    describe('On getCellAt row column', function(){
-
-       it('returns the cell', function(){
-          var board = Boardservice.deal();
-          var cell = Boardservice.getCellAt(0, 2);
-          expect(cell.id).toBe(board[0][2].id) ;
-       });
-
-    });
 });

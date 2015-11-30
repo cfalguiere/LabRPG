@@ -69,7 +69,7 @@ angular.module('labrpgApp')
                        light) );
 //C’est pour ça que les vieux films de Science-Fiction ont des ordinateurs très bizarres',
     labs.push( new Lab('l13-gui-folle', 'GuirlandeFolle', 'La guirlande folle',
-       'On va se servir de l’affichage de nombre en binaire pour allumer les LEDs de la guirlande et faire des motifs.',
+       "On va se servir de l'affichage de nombre en binaire pour allumer les LEDs de la guirlande et faire des motifs.",
                        light) );
     labs.push( new Lab('l14-enseigne', 'EnseigneLumineuse', 'Enseigne lumineuse',
        'On va reprendre la guirlande folle pour allumer les LEDs dans un certain ordre et faire une enseigne.',

@@ -7,15 +7,17 @@
     </div>
 
 
-    <table>
-        <tr ng-repeat="row in board">
-            <td ng-repeat="cell in row" ng-click="playCell(cell)" >
+    <div class="panel panel-default">
+       <div zclass="panel-body">
+           <ul class="row" >
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+                        ng-repeat="cell in board">
                 <div ng-show="{{ cell.card.visible }}">
                     <div class="cover">
-                        <div class="banner">
+                        <div class="banner" ng-click="playCell(cell)">
                              <img src="{{ cell.card.lab.getCoverImage() }}" />
                         </div>
-                        <div class="info">
+                        <div class="info" ng-click="playCell(cell)">
                             <p class="title">{{ cell.card.lab.name }}</p>
                             <p>{{ cell.card.lab.description }}</p>
                              <!--
@@ -28,8 +30,10 @@
                          </div>
                    </div>
                 </div>
-            </td>
-        </tr>
-    </table>
+               </div>
+           </ul>
+        </div>
+    </div>
+
     <br>
 </div>

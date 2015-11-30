@@ -22,7 +22,7 @@ describe('Filter: renderCompleted', function () {
                        card: { id: 1, color: 'red', shape: 'heart', completed: true,
                               lab: { id: 'l1', name: 'light 1', description: 'LIGHT 1'}},
                        state: 'placed' };
-          expect(renderCompleted(cell1)).toBe('glyphicon glyphicon-check card-green');
+          expect(renderCompleted(cell1)).toBe('glyphicon glyphicon-check card-green card-completed');
     });
 
     it('should return unchecked', function() {
@@ -30,7 +30,7 @@ describe('Filter: renderCompleted', function () {
                        card: { id: 1, color: 'red', shape: 'heart', completed: false,
                               lab: { id: 'l1', name: 'light 1', description: 'LIGHT 1'}},
                        state: 'placed' };
-          expect(renderCompleted(cell1)).toBe('glyphicon glyphicon-unchecked card-green');
+          expect(renderCompleted(cell1)).toBe('glyphicon glyphicon-unchecked card-green card-completed');
     });
 
   });

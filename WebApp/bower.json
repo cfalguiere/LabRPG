@@ -22,6 +22,7 @@
       "main": [
         "less/bootstrap.less",
         "dist/css/bootstrap.css",
+        "dist/css/bootstrap-theme.css",
         "dist/js/bootstrap.js"
       ]
     }

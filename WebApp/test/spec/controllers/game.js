@@ -7,41 +7,27 @@ describe('Controller: GameCtrl', function () {
 
   // mock BoardService and gameService
   beforeEach(function () {
-     var colors = [ 'cyan', 'green', 'blue', 'orange', 'purple', 'pink', ];
-     var shapes = [ 'heart', 'star', 'music', 'cloud', 'flag', 'headphones' ];
-
-     var cards =   [
-        { id: 1, shape: shapes[0], color: colors[0]},
-        { id: 2, shape: shapes[1], color: colors[1]},
-        { id: 3, shape: shapes[2], color: colors[2]},
-        { id: 4, shape: shapes[3], color: colors[3]},
-        { id: 5, shape: shapes[4], color: colors[4]},
-        { id: 6, shape: shapes[5], color: colors[5]}
+      var board =  [
+        { id: 1, state: 'placed',
+         card: { id: 1, shape: 'light', color: 'red', completed: false, reachable: false, visible: false,
+         lab: { id: 'l1', ref: 'L1', name: 'light 1', description: 'LIGHT 1', theme: 'light' } } },
+        { id: 2, state: 'placed',
+         card: { id: 2, shape: 'light', color: 'red', completed: false, reachable: false, visible: false,
+         lab: { id: 'l2', ref: 'L2', name: 'light 2', description: 'LIGHT 2', theme: 'light' } } },
+        { id: 3, state: 'placed',
+          card: { id: 3, shape: 'music', color: 'red', completed: false, reachable: false, visible: false,
+          lab: { id: 'm1', ref: 'M1', name: 'music 1', description: 'MUSIC 1', theme: 'music' } } },
+        { id: 4, state: 'placed',
+          card: { id: 4, shape: 'music', color: 'red', completed: false, reachable: false, visible: false,
+          lab: { id: 'm2', ref: 'M2', name: 'music 2', description: 'MUSIC 2', theme: 'music' } } }
       ];
 
-      var boardCards = [  [ 1, 1, 2, 2 ],
-                          [ 3, 3, 4, 4 ],
-                          [ 5, 5, 6, 6 ]  ];
-
-
-      var id = 1;
-      var cellMapper = function(cardId) {
-          return { id: id++, card: cards[cardId-1], state: 'placed' };
-      };
-      var rowMapper = function(rowCards) {
-          return rowCards.map( cellMapper );
-      };
-      var board = boardCards.map( rowMapper );
-
       var boardDependency =  {
-        sortedCellsByCardId : function() {
-          var cells = board.reduce(function(acc, row){
-            return acc.concat(row);
-          });
-          return cells;
+        getCells: function () {
+          return board;
         },
-        getCellAt: function (row, column) {
-          return board[row][column];
+        getCellAt: function (pos) {
+          return board[pos];
         },
         deal: function () {
           return board;
@@ -49,11 +35,13 @@ describe('Controller: GameCtrl', function () {
       };
 
       var count = 0;
+      var selectedCell = null;
       var gameDependency =  {
         reset : function() { count = 0; },
         getBoard : function() { return board; },
-        playCell : function(cell) { count++; cell.state='completed' },
-        isCompleted : function() { return count === board.length*board[0].length; }
+        playCell : function(cell) { selectedCell = cell; cell.state = 'selected';},
+        getSelectedCell : function() { return selectedCell; },
+        isCompleted : function() { return count === board.length; }
       };
 
       module(function ($provide) {
@@ -83,9 +71,8 @@ describe('Controller: GameCtrl', function () {
 
     it('should create a board', function () {
       var board = scope.board;
-      expect(board.length).toBe(3);
-      expect(board[0].length).toBe(4);
-      expect(board[0][0].state).toBe('placed');
+      expect(board.length).toBe(4);
+      expect(board[0].state).toBe('placed');
     });
 
     it('game is not completed', function () {
@@ -96,33 +83,16 @@ describe('Controller: GameCtrl', function () {
 
   describe('When user clicks a card', function () {
 
-    it('turns to completed', function () {
+    it('becomes selected', function () {
       Gameservice.reset();
-      var activeCell = Boardservice.getCellAt(0,0);
+      var activeCell = Boardservice.getCellAt(0);
       expect(activeCell.state).toBe('placed');
       scope.playCell(activeCell);
-      expect(activeCell.state).toBe('completed');
+      expect(activeCell.state).toBe('selected');
+      expect(activeCell === Gameservice.getSelectedCell()).toBe(true);
     });
 
   });
 
-  describe('When user removed all cards', function () {
-
-    it('game is completed', function () {
-      expect(scope.completed).toBe(false);
-
-      var nbRows = scope.board.length;
-      var nbColumns = scope.board[0].length;
-      for (var r=0; r<nbRows; r++) {
-       for (var c=0; c<nbColumns; c++) {
-         scope.playCell(scope.board[r][c]);
-         if (r<nbRows-1 && c<nbColumns-1) {
-          expect(scope.completed).toBe(false);
-         }
-       }
-      }
-      expect(scope.completed).toBe(true);
-    });
-  });
 
 });
