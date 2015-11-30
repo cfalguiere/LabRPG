@@ -17,6 +17,7 @@ angular.module('labrpgApp')
     }
 
     var board;
+    var index;
 
     function dealCells (cards) {
       var i = 1;
@@ -27,11 +28,12 @@ angular.module('labrpgApp')
     }
 
     function makeBoard (cells) {
-      /*
-        board = [];
-        for (var cell in cells) {
-           board.push(cell);
-        }*/
+        index = cells.reduce(function(acc, cell){
+          var key = cell.card.lab.id;
+          acc[key] = cell.id;
+          return acc;
+        }, {} );
+
         board = cells;
         return board;
     }
@@ -42,11 +44,50 @@ angular.module('labrpgApp')
       return makeBoard(dealCells(CardFactory));
     };
 
+    this.updateVisibleCells = function() {
+       board.map( function(cell) {
+         if (cell.card.completed) {
+           cell.card.visible = true;
+         } else {
+           if (cell.card.lab.follows.length == 0) {
+             cell.card.visible = true;
+           } else {
+             var id = cell.card.lab.follows[0]; // TODO plusieurs follows
+             var pos = index[id];
+             var followed = board[pos - 1];
+             if (followed.card.completed) {
+               cell.card.visible = true;
+             } else {
+               cell.card.visible = false;
+             }
+           }
+         }
+       });
+    };
+
     this.getCells = function() {
       return board;
     };
 
+    this.getVisibleCells = function() {
+      return board.reduce( function(acc, cell) {
+        if (cell.card.visible) {
+          acc.push(cell);
+        }
+        return acc;
+      }, []);
+    };
+
     this.getCellAt = function(pos) {
       return board[pos];
+    };
+
+    function getCellById(id) {
+      var pos = index[id] - 1;
+      return board[pos];
+    }
+
+    this.getCellById = function(id) {
+      return getCellById(id);
     };
   });

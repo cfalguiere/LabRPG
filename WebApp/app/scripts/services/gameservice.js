@@ -41,6 +41,7 @@ angular.module('labrpgApp')
     this.completeCell = function (cell) {
         var state = cell.card.completed;
         cell.card.completed = ! state;
+        Boardservice.updateVisibleCells();
     };
 
     this.isCompleted = function () {

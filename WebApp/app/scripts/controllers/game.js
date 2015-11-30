@@ -8,12 +8,13 @@
  * Controller of the labrpgApp
  */
 angular.module('labrpgApp')
-  .controller('GameCtrl', function ($scope, $location, Gameservice) {
+  .controller('GameCtrl', function ($scope, $location, Gameservice, Boardservice) {
 
     Gameservice.reset();
     $scope.board = Gameservice.getBoard();
 
     $scope.completed = false;
+    $scope.visibleCells = Boardservice.getVisibleCells();
 
     $scope.playCell = function (cell) {
       Gameservice.playCell(cell);
@@ -24,5 +25,7 @@ angular.module('labrpgApp')
     $scope.completeCell = function (cell) {
        Gameservice.completeCell(cell);
        $scope.completed = Gameservice.isCompleted();
+       $scope.visibleCells = Boardservice.getVisibleCells();
     };
+
 });

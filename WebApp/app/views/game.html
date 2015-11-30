@@ -11,7 +11,7 @@
        <div zclass="panel-body">
            <ul class="row" >
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-                        ng-repeat="cell in board">
+                        ng-repeat="cell in visibleCells">
                 <div ng-show="{{ cell.card.visible }}">
                     <div class="cover">
                         <div class="banner" ng-click="playCell(cell)">

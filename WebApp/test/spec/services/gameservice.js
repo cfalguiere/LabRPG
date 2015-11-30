@@ -10,19 +10,21 @@ describe('Service: GameService', function () {
       var board =  [
         { id: 1, state: 'placed',
          card: { id: 1, shape: 'light', color: 'red', completed: false, reachable: false, visible: false,
-         lab: { id: 'l1', ref: 'L1', name: 'light 1', description: 'LIGHT 1', theme: 'light' } } },
+         lab: { id: 'l1', ref: 'L1', name: 'light 1', description: 'LIGHT 1', theme: 'light', follows: [] } } },
         { id: 2, state: 'placed',
          card: { id: 2, shape: 'light', color: 'red', completed: false, reachable: false, visible: false,
-         lab: { id: 'l2', ref: 'L2', name: 'light 2', description: 'LIGHT 2', theme: 'light' } } },
+         lab: { id: 'l2', ref: 'L2', name: 'light 2', description: 'LIGHT 2', theme: 'light', follows: ['l1']  } } },
         { id: 3, state: 'placed',
           card: { id: 3, shape: 'music', color: 'red', completed: false, reachable: false, visible: false,
-          lab: { id: 'm1', ref: 'M1', name: 'music 1', description: 'MUSIC 1', theme: 'music' } } },
+          lab: { id: 'm1', ref: 'M1', name: 'music 1', description: 'MUSIC 1', theme: 'music', follows: ['l1']  } } },
         { id: 4, state: 'placed',
           card: { id: 4, shape: 'music', color: 'red', completed: false, reachable: false, visible: false,
-          lab: { id: 'm2', ref: 'M2', name: 'music 2', description: 'MUSIC 2', theme: 'music' } } }
+          lab: { id: 'm2', ref: 'M2', name: 'music 2', description: 'MUSIC 2', theme: 'music', follows: ['m1'] } } }
       ];
 
       var boardDependency =  {
+        updateVisibleCells: function () {
+        },
         getCells: function () {
           return board;
         },

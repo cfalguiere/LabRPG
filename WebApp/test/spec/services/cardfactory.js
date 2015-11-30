@@ -8,10 +8,10 @@ describe('Service: CardFactory', function () {
      // defines a 4x4 board
     beforeEach( function () {
       var labs = [
-          { id: 'l1', ref: 'L1', name: 'light 1', description: 'LIGHT 1', theme: 'light' },
-          { id: 'l2', ref: 'L2', name: 'light 2', description: 'LIGHT 2', theme: 'light' },
-          { id: 'm1', ref: 'M1', name: 'music 1', description: 'MUSIC 1', theme: 'music' },
-          { id: 'm2', ref: 'M2', name: 'music 2', description: 'MUSIC 2', theme: 'music' }
+        { id: 'l1', ref: 'L1', name: 'light 1', description: 'LIGHT 1', theme: 'light', follows: [] },
+          { id: 'l2', ref: 'L2', name: 'light 2', description: 'LIGHT 2', theme: 'light', follows: ['l1']  },
+          { id: 'm1', ref: 'M1', name: 'music 1', description: 'MUSIC 1', theme: 'music', follows: ['l1']  },
+          { id: 'm2', ref: 'M2', name: 'music 2', description: 'MUSIC 2', theme: 'music', follows: ['m1']  }
       ];
       var labDependency = labs;
       module(function ($provide) {

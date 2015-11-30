@@ -30,9 +30,11 @@ angular.module('labrpgApp')
       return new Card(i++, lab.theme, 'cyan', lab);
     });
 
-     cards.map(function(card){
-       card.visible = true;
-     });
+    cards.map(function(card){
+      if (card.lab.follows.length == 0) {
+        card.visible = true;
+      }
+    });
 
     return cards;
   });
