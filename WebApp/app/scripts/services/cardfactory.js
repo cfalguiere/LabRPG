@@ -30,20 +30,9 @@ angular.module('labrpgApp')
       return new Card(i++, lab.theme, 'cyan', lab);
     });
 
-    cards[0].visible = true;
-    cards[1].visible = true;
-    cards[2].visible = true;
-    cards[3].visible = true;
-    cards[4].visible = true;
-    cards[5].visible = true;
-    cards[6].visible = true;
-    cards[7].visible = true;
-    cards[8].visible = true;
-    cards[9].visible = true;
-    cards[10].visible = true;
-    cards[11].visible = true;
-    cards[12].visible = true;
-    cards[13].visible = true;
+     cards.map(function(card){
+       card.visible = true;
+     });
 
     return cards;
   });

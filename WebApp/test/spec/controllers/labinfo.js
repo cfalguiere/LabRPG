@@ -76,7 +76,7 @@ describe('Controller: LabinfoCtrl', function () {
       Gameservice.reset();
       scope.board = Gameservice.getBoard();
       Gameservice.playCell(scope.board[0]);
-      //scope.activeCell = Gameservice.getSelectedCell();
+      scope.activeCell = Gameservice.getSelectedCell();
       expect(scope.activeCell.card.lab.id).toBe('l1');
   });
 

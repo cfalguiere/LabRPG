@@ -39,7 +39,8 @@ angular.module('labrpgApp')
     };
 
     this.completeCell = function (cell) {
-         cell.card.completed = true;
+        var state = cell.card.completed;
+        cell.card.completed = ! state;
     };
 
     this.isCompleted = function () {

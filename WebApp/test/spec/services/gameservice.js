@@ -87,6 +87,23 @@ describe('Service: GameService', function () {
 
 
 
+  describe('When user clicks the completed checkbox', function () {
+
+    it('card is switched', function () {
+      Gameservice.reset();
+      var cells = Gameservice.getBoard();
+      var cell = cells[0];
+      var card = cell.card;
+      expect(card.completed).toBe(false);
+      Gameservice.completeCell(cell);
+      expect(card.completed).toBe(true);
+      Gameservice.completeCell(cell);
+      expect(card.completed).toBe(false);
+    });
+
+  });
+
+
   describe('When user completed all cards', function () {
 
     it('game is completed', function () {
