@@ -20,4 +20,9 @@ angular.module('labrpgApp')
       $scope.activeCell = Gameservice.getSelectedCell();
       $location.path('labinfo');
     };
-  });
+
+    $scope.completeCell = function (cell) {
+       Gameservice.completeCell(cell);
+       $scope.completed = Gameservice.isCompleted();
+    };
+});

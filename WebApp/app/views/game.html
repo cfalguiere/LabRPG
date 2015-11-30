@@ -26,7 +26,7 @@
                         </div>
                          <div class="icons" style="vertical-align: middle;">
                              <span class="{{ cell | renderCard }}"></span>
-                             <span class="{{ cell | renderCompleted }}"></span>
+                             <span class="{{ cell | renderCompleted }}" ng-click="completeCell(cell)"></span>
                          </div>
                    </div>
                 </div>
