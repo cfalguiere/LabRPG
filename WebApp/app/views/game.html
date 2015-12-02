@@ -10,23 +10,22 @@
        <div class="panel-body">
 -->
            <ul class="row" >
-               <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3"  ng-repeat="cell in visibleCells">
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4"  ng-repeat="cell in visibleCells">
                    <div class="cover">
-                        <ul class="row banner" ng-click="playCell(cell)">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-                                 <img src="{{ cell.card.lab.getCoverImage() }}" />
+                        <ul class="row banner" >
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                 <img src="{{ cell.card.lab.getCoverImage() }}" ng-click="playCell(cell)"/>
                             </div>
-                        </ul>
-                           <ul class="row icons">
-                              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                <span class="{{ cell | renderCard }}"></span>
-                             </div>
-                              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                 <span>&nbsp;</span>
-                             </div>
-                              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                 <span class="{{ cell | renderCompleted }}" ng-click="completeCell(cell)"></span>
-                             </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                              <ul class="row icons">
+                                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span class="{{ cell | renderCard }}"></span>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span class="{{ cell | renderCompleted }}" ng-click="completeCell(cell)"></span>
+                                  </div>
+                              </ul>
+                            </div>
                         </ul>
                         <ul class="row title" ng-click="playCell(cell)">
                              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
