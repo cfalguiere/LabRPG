@@ -19,7 +19,7 @@ angular.module('labrpgApp')
        this.follows = someFollows;
        this.demoImage = null;
        this.getFolder = function () {
-        return 'images/labs/' + this.id;
+        return 'documents/labs/' + this.id;
        }
        this.getCoverImage = function () {
         return this.getFolder() + '/cover.png';
