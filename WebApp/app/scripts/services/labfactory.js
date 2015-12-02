@@ -20,30 +20,30 @@ angular.module('labrpgApp')
        this.demoImage = null;
        this.getFolder = function () {
         return '/documents/labs/' + this.id;
-       }
+       };
        this.getCoverImage = function () {
         return this.getFolder() + '/cover.png';
-       }
+       };
        this.getDemoImage = function () {
-         if (this.demoImage != null) {
+         if (this.demoImage !== null) {
            return this.getFolder() + '/' + this.demoImage;
          } else {
            return null;
          }
-       }
+       };
        this.getGuide = function () {
          return this.getFolder() + '/Guide.pdf';
-       }
+       };
        this.getCircuit = function () {
          return this.getFolder() + '/SchemaCircuit.png';
-       }
+       };
        this.getCode = function () {
-         if (this.ref != null) {
+         if (this.ref !== null) {
            return this.getFolder() + '/' + this.ref + '.zip';
          } else {
            return null;
          }
-      }
+      };
    }
 
     var light = 'lamp';
@@ -69,11 +69,11 @@ angular.module('labrpgApp')
        'Apprendre à utiliser les boucles en faisant une guirlande de Noël',
                        light, [ 'l3-feu-pie' ] ) );
     labs.push( new Lab('l12-base2', 'Univac', 'Aux origines',
-       'Les premiers ordinateurs n’avaient pas d’écran. Ils affichaient les résultats des calculs en allumant des lampes.',
+       'Les premiers ordinateurs n\'avaient pas d\'écran. Ils affichaient les résultats des calculs en allumant des lampes.',
                        light, [ 'l11-gui-noel' ] ) );
 //C’est pour ça que les vieux films de Science-Fiction ont des ordinateurs très bizarres',
     labs.push( new Lab('l13-gui-folle', 'GuirlandeFolle', 'La guirlande folle',
-       "On va se servir de l'affichage de nombre en binaire pour allumer les LEDs de la guirlande et faire des motifs.",
+       'On va se servir de l\'affichage de nombre en binaire pour allumer les LEDs de la guirlande et faire des motifs.',
                        light, [ 'l12-base2' ] ) );
     labs.push( new Lab('l14-enseigne', 'EnseigneLumineuse', 'Enseigne lumineuse',
        'On va reprendre la guirlande folle pour allumer les LEDs dans un certain ordre et faire une enseigne.',
@@ -106,5 +106,5 @@ angular.module('labrpgApp')
       }
     };*/
 
-    return labs
+    return labs;
   });

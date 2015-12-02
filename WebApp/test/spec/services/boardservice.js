@@ -43,7 +43,7 @@ describe('Service: BoardService', function () {
         });
 
         it('set the index', function(){
-          var board = Boardservice.deal();
+          Boardservice.deal();
           var cell = Boardservice.getCellById('l1');
           expect(cell).toBeDefined();
           expect(cell.id).toBe(1) ;

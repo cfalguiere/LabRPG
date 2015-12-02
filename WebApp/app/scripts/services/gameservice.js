@@ -13,10 +13,6 @@ angular.module('labrpgApp')
     var board = null;
     var selectedCell = null;
 
-    function match(cell1, cell2) {
-        return cell1.id !== cell2.id && cell1.card.id === cell2.card.id;
-    }
-
     this.reset = function() {
       board = Boardservice.deal();
       selectedCell = null;
@@ -31,8 +27,8 @@ angular.module('labrpgApp')
     };
 
     this.playCell = function (cell) {
-        if (selectedCell !=null) {
-          selectedCell.state = 'placed'
+        if (selectedCell !== null) {
+          selectedCell.state = 'placed';
         }
         selectedCell = cell;
         cell.state = 'selected';
