@@ -1,33 +1,38 @@
 .cover {
-    margin: 3px;
-    padding: 3px;
     border-style: solid;
-    border-width: 1px;
-    border-color: #aaaaaa;
-    height: 260px;
-    width: 220px;
-    margin-bottom: 20px;
+    border-width: 1px 3px 3px 1px;
+    border-color: #cccccc #aaaaaa #aaaaaa #cccccc;
+    height: 270px;
+    width: 202px;
+    margin-bottom: 30px;
 }
 
-.cover > .banner {
-    height: 100px;
-    text-align: center;
+.cover  .banner img {
+    margin-left: -40px;
 }
-.cover > .info {
-    height: 120px;
-}
-.cover > .icons {
-    height: 32px;
-    width: 210px;
-    background-color: #eeeeee;
-}
-
-.cover > .info > .title {
-    padding-top: 0.4em;
+.cover .title {
+    margin-left: 0px;
+    padding: 0.4em 0 0 0;
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
+    /*background-color: green;*/
+    width: 200px;
 }
+.cover  .info {
+    margin-left: 0px;
+    padding: 0;
+    text-align: justify;
+    /*background-color: red;*/
+    width: 200px;
+}
+.cover  .icons {
+    margin-left: 0px;
+    padding-left: 0px;
+    /*background-color: cyan;*/
+    width: 200px;
+}
+
 
 .presentation  >  .banner {
     height:120px
@@ -44,14 +49,15 @@
 .card {
     margin: 3px;
     padding: 3px;
-    border-style: solid;
-    border-width: 1px;
+    font-size: 1.4em;
+    /*border-style: solid;
+    border-width: 1px; */
 }
 .card-purple {
     border-color: #9881F5;
     color: #9881F5;
-    ;border-color: #7A0D7A;
-    ;color: #7A0D7A;
+    /* border-color: #7A0D7A;
+    color: #7A0D7A; */
 }
 .card-green {
     border-color: #9DBC06;
@@ -88,11 +94,9 @@
 .card-completed {
     font-size: 1.7em;
     border-width: 1.2px;
+    padding-top: 0.2em;
 }
-.cover > .icons > .card-completed {
-    padding-top: 4px;
-    float: right;
-}
+
 .presentation > .banner > .card-completed {
     padding-left: 4px;
 }

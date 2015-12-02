@@ -1,39 +1,50 @@
-<div class="container">
+<div class="container-fluid">
   <h2>Labs</h2>
 
 
     <div ng-show="completed">
         <p class="wingame">Bravo !</p>
     </div>
-
-
+<!--
     <div class="panel panel-default">
-       <div zclass="panel-body">
+       <div class="panel-body">
+-->
            <ul class="row" >
-               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-                        ng-repeat="cell in visibleCells">
-                <div ng-show="{{ cell.card.visible }}">
-                    <div class="cover">
-                        <div class="banner" ng-click="playCell(cell)">
-                             <img src="{{ cell.card.lab.getCoverImage() }}" />
-                        </div>
-                        <div class="info" ng-click="playCell(cell)">
-                            <p class="title">{{ cell.card.lab.name }}</p>
-                            <p>{{ cell.card.lab.description }}</p>
-                             <!--
-                             <span class="glyphicon glyphicon-{{ cell.card.shape }} card card-{{ cell.state }} card-{{ cell.card.color }}"></span>
-                             -->
-                        </div>
-                         <div class="icons" style="vertical-align: middle;">
-                             <span class="{{ cell | renderCard }}"></span>
-                             <span class="{{ cell | renderCompleted }}" ng-click="completeCell(cell)"></span>
-                         </div>
+               <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3"  ng-repeat="cell in visibleCells">
+                   <div class="cover">
+                        <ul class="row banner" ng-click="playCell(cell)">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                 <img src="{{ cell.card.lab.getCoverImage() }}" />
+                            </div>
+                        </ul>
+                           <ul class="row icons">
+                              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <span class="{{ cell | renderCard }}"></span>
+                             </div>
+                              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                 <span>&nbsp;</span>
+                             </div>
+                              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                 <span class="{{ cell | renderCompleted }}" ng-click="completeCell(cell)"></span>
+                             </div>
+                        </ul>
+                        <ul class="row title" ng-click="playCell(cell)">
+                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                 <span>{{ cell.card.lab.name }} </span>
+                              </div>
+                        </ul>
+                      <ul class="row info" ng-click="playCell(cell)" >
+                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <span>{{ cell.card.lab.description }}</span>
+                             </div>
+                        </ul>
                    </div>
-                </div>
                </div>
            </ul>
+    <!--
         </div>
     </div>
+    -->
 
     <br>
 </div>
