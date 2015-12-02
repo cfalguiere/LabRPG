@@ -221,7 +221,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -308,16 +308,16 @@ module.exports = function (grunt) {
       }
     },
 
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
+    //svgmin: {
+      //dist: {
+        //files: [{
+          //expand: true,
+          //cwd: '<%= yeoman.app %>/images',
+          //src: '{,*/}*.svg',
+          //dest: '<%= yeoman.dist %>/images'
+        //}]
+      //}
+    //},
 
     htmlmin: {
       dist: {
@@ -381,7 +381,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'documents/labs/{,*/}*.*'
           ]
         }, {
           expand: true,
@@ -413,8 +414,8 @@ module.exports = function (grunt) {
       ],
       dist: [
         'copy:styles',
-        'imagemin',
-        'svgmin'
+        'imagemin'//,
+        //'svgmin'
       ]
     },
 
