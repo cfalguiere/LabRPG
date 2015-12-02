@@ -26,6 +26,9 @@ describe('Controller: GameCtrl', function () {
         getCells: function () {
           return board;
         },
+        getVisibleCells: function () {
+          return board;
+        },
         getCellAt: function (pos) {
           return board[pos];
         },
