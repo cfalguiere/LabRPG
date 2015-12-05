@@ -36,17 +36,17 @@ describe('Service: LabFactory', function () {
 
        it('returns a folder path', function(){
            var lab = LabFactory[0];
-           expect( lab.getFolder() ).toBe('documents/labs/l1-lumiere');
+           expect( lab.getFolder() ).toBe('/documents/labs/l1-lumiere');
        });
 
        it('returns a cover image name', function(){
            var lab = LabFactory[0];
-           expect( lab.getCoverImage() ).toBe('documents/labs/l1-lumiere/cover.png');
+           expect( lab.getCoverImage() ).toBe('/documents/labs/l1-lumiere/cover.png');
        });
 
        xit('returns a demo image name', function(){
            var lab = LabFactory[1];
-           expect( lab.getDemoImage() ).toBe('documents/labs/l2/demo.jpg');
+           expect( lab.getDemoImage() ).toBe('/documents/labs/l2/demo.jpg');
        });
 
        it('returns null if no image prvided', function(){

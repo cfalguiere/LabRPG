@@ -41,7 +41,7 @@ describe('Controller: LabinfoCtrl', function () {
         getBoard : function() { return board; },
         playCell : function(cell) { selectedCell = cell; cell.state = 'selected';},
         getSelectedCell : function() { return selectedCell; },
-        completeCell : function(cell) { count++; cell.state='completed' },
+        completeCell : function(cell) { count++; cell.state='completed'; },
         isCompleted : function() { return count === board.length; }
       };
 

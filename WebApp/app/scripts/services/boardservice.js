@@ -49,7 +49,7 @@ angular.module('labrpgApp')
          if (cell.card.completed) {
            cell.card.visible = true;
          } else {
-           if (cell.card.lab.follows.length == 0) {
+           if (cell.card.lab.follows.length === 0) {
              cell.card.visible = true;
            } else {
              var id = cell.card.lab.follows[0]; // TODO plusieurs follows

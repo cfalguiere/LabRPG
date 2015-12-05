@@ -22,8 +22,8 @@ angular.module('labrpgApp')
        this.visible = false;
     }
 
-    var colors = [ 'cyan', 'green', 'blue', 'orange', 'purple', 'pink', ];
-    var shapes = [ 'heart', 'star', 'music', 'cloud', 'flag', 'headphones' ];
+    //var colors = [ 'cyan', 'green', 'blue', 'orange', 'purple', 'pink', ];
+    //var shapes = [ 'heart', 'star', 'music', 'cloud', 'flag', 'headphones' ];
 
     var i = 1;
     var cards = LabFactory.map(function(lab){
@@ -31,7 +31,7 @@ angular.module('labrpgApp')
     });
 
     cards.map(function(card){
-      if (card.lab.follows.length == 0) {
+      if (card.lab.follows.length === 0) {
         card.visible = true;
       }
     });
