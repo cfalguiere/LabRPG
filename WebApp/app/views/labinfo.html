@@ -1,12 +1,10 @@
 <div class="container-fluid" ng-show="activeCell">
-    <div class="presentation">
+    <div class="lab-presentation">
         <div class="banner">
             <img style="float:right" src="{{ activeCell.card.lab.getCoverImage() }}" />
             <h2>{{ activeCell.card.lab.name }}</h2>
             <p>
                 <span class="{{ activeCell | renderCard }}"></span>
-            </p>
-            <p>
                 <span class="{{ activeCell | renderCompleted }}" ng-click="completeCell(activeCell)"></span>
             </p>
         </div>

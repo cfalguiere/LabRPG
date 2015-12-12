@@ -1,16 +1,27 @@
 
-.presentation  >  .banner {
-    height:120px
+.lab-presentation {
+    margin-left: 0px;
 }
-.presentation  >  .section {
+.lab-presentation .banner {
+    /*height: 135px;*/
+    border-color: #eeeeee;
+    border-style: solid;
+    border-width: 0.5em;
+    padding: 10px;
+}
+.lab-presentation .banner .title {
+    font-size: 1.8em;
+}
+
+.lab-presentation .banner .card-completed {
+    padding-top: 5px;
+}
+
+.lab-presentation  >  .section {
     margin-bottom: 1em;
 }
-.presentation  >  .section > .title {
+.lab-presentation  >  .section > .title {
     padding-top: 0.5em;
     font-size: 1.2em;
     font-weight: bold;
-}
-
-.presentation > .banner > .card-completed {
-    padding-left: 4px;
 }

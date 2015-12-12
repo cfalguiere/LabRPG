@@ -83,6 +83,9 @@
 .card-completed {
     font-size: 1.7em;
     border-width: 1.2px;
+}
+
+.cover  .card-completed {
     padding-top: 0.2em;
     padding-right: 0.1em;
 }
