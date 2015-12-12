@@ -27,37 +27,57 @@
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+        <div class="container-fluid">
 
-            <img src="images/banner.png" />
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+        <!-- <div class="navbar-header"> -->
+
+            <ul class="row" >
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <img class="img-responsive" src="images/logo-d4k.png" style="margin:10px;"/>
+               </div>
+                <div class="visible-md col-md-8 visible-lg col-lg-3">
+                    <p class="text-center" style="margin-top:20px;font-style:italic;font-weight:bold;">Transmettre aux enfants le goût de l'informatique, de la robotique et de l'électronique.</p>
+                </div>
+                <div class="visible-sm col-sm-6 visible-md col-md-4 visible-lg col-lg-3">
+                    <img class="img-responsive" style="margin-top:20px;" src="images/text-d4k.png" style="margin:20px;"/>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <img class="img-responsive pull-right" style="margin-top:20px;" src="images/text-arduino.png" style="margin:10px;"/>
+                </div>
+            </ul>
+            <ul class="row" >
+               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                </div>
+            </ul>
 <!--
             <a class="navbar-brand" href="#/">labrpg</a>
 -->
-          </div>
+       <!-- </div> -->
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+        <ul class="row" >
+            <div class="collapse navbar-collapse" id="js-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!--
+                  <li class="active"><a href="#/">Home</a></li>
+                  <li><a ng-href="#/about">About</a></li>
+                  <li><a ng-href="#/player">S'enregistrer</a></li>
+                    -->
+                  <li class="active"><a ng-href="#/game">Jouer</a></li>
+                </ul>
+            </div>
+        </ul>
 
-            <ul class="nav navbar-nav">
-                <!--
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/player">S'enregistrer</a></li>
-                -->
-              <li class="active"><a ng-href="#/game">Jouer</a></li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
     <div ng-view=""></div>
     </div>
 
