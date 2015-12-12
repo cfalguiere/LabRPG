@@ -2,8 +2,8 @@
     border-style: solid;
     border-width: 1px 3px 3px 1px;
     border-color: #cccccc #aaaaaa #aaaaaa #cccccc;
-    height: 200px;
-    width: 300px;
+    height: 220px;
+    width: 280px;
     margin-bottom: 20px;
 }
 
@@ -17,14 +17,14 @@
     font-weight: bold;
     text-align: center;
     /*background-color: green;*/
-    width: 300px;
+    width: 280px;
 }
 .cover  .info {
     margin-left: 0px;
     padding: 0;
     text-align: justify;
     /*background-color: red;*/
-    width: 300px;
+    width: 280px;
 }
 .cover  .icons {
     margin-left: 0px;
