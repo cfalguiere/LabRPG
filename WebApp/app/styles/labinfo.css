@@ -1,0 +1,16 @@
+
+.presentation  >  .banner {
+    height:120px
+}
+.presentation  >  .section {
+    margin-bottom: 1em;
+}
+.presentation  >  .section > .title {
+    padding-top: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.presentation > .banner > .card-completed {
+    padding-left: 4px;
+}
