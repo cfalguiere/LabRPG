@@ -15,9 +15,63 @@
             </center>
             <p> </p>
         </div>
-        <div class="section">
+        <div class="section page-header">
             <p class="title">Objectif :</p>
             <p>{{ activeCell.card.lab.description }}</p>
+        </div>
+
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="/#/labinfo/#collapse1">
+                Collapsible Group 1</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="/#/labinfo/#collapse2">
+                Collapsible Group 2</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="/#/labinfo/#collapse3">
+                Collapsible Group 3</a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.</div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+            <p class="title">Composants :</p>
+            <ul class="row" >
+               <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2"  ng-repeat="cmp in activeCell.card.lab.bom.components">
+                <center><img style="border: solid;" src="/documents/components/led/thumbnail.png"/></center>
+                <p style="text-align: center;"> {{ cmp.id.name }}  <br>  x {{ cmp.qty }} </p>
+               </div>
+            </ul>
         </div>
         <div class="section">
             <p class="title">Instructions :</p>

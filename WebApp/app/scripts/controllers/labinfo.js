@@ -15,4 +15,5 @@ angular.module('labrpgApp')
        Gameservice.completeCell(cell);
        $scope.completed = Gameservice.isCompleted();
     };
+
   });
