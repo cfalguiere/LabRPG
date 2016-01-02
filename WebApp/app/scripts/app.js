@@ -49,6 +49,11 @@ angular
         controller: 'LabinfoCtrl',
         controllerAs: 'labinfo'
       })
+      .when('/component', {
+        templateUrl: 'views/component.html',
+        controller: 'ComponentCtrl',
+        controllerAs: 'component'
+      })
       .otherwise({
         redirectTo: '/'
       });

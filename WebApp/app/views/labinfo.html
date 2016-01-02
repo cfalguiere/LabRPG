@@ -67,8 +67,10 @@
         <div class="section">
             <p class="title">Composants :</p>
             <ul class="row" >
-               <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2"  ng-repeat="cmp in activeCell.card.lab.bom.components">
-                <center><img style="border: solid;" src="/documents/components/led/thumbnail.png"/></center>
+               <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2"
+                    ng-repeat="cmp in activeCell.card.lab.bom.components">
+                <center><img style="border: solid;" src="/documents/components/led/thumbnail.png"
+                    ng-click="showComponent(cmp)"/></center>
                 <p style="text-align: center;"> {{ cmp.id.name }}  <br>  x {{ cmp.qty }} </p>
                </div>
             </ul>
